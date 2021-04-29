@@ -2,10 +2,65 @@
 <hr>
 <div class="row text-right">
     <div class="col">
-        <button routerLink='/heroes'
-            class="btn btn-danger">
+        <button routerLink='/heroes' class="btn btn-danger">
             <i class="fa fa-arrow-left"></i>
             Regresar
         </button>
+    </div>
+</div>
+
+
+<div class="row animated fadeIn faster">
+    <div class="col">
+        <form (ngSubmit)="guardar( f )"
+                #f = "ngForm">
+            <div class="form-group">
+                <label for="my-input">Firebase ID</label>
+                <input class="form-control" type="text" disabled="disabled" 
+                name="id"
+                [(ngModel)]="heroe.id"
+                placeholder="Firebase ID">
+                <small class="form-text text-muted">Este campo es autogenerado</small>
+            </div>
+            <div class="form-group">
+                <label for="my-input">Nombre</label>
+                <input class="form-control" type="text" 
+                name="nombre"
+                [(ngModel)]="heroe.nombre"
+                placeholder="Nombre del héroe" required>
+            </div>
+            <div class="form-group">
+                <label for="my-input">Poder</label>                
+                <input class="form-control" type="text" 
+                name="poder"
+                [(ngModel)]="heroe.poder"
+                placeholder="Poder del héroe">
+            </div>
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="form-group col-4">
+                    <label for="my-input">Estado</label>
+                    <br>
+                    <button *ngIf="heroe.vivo" (click)="heroe.vivo = false"
+                    class="btn btn-outline-success btn-lg  w-100" type="button">
+                    <i class="fas fa-smile-wink"></i>
+                    Vivo
+                </button>
+                <button *ngIf="!heroe.vivo" (click)="heroe.vivo = true"
+                class="btn btn-outline-danger btn-lg  w-100" type="button">
+                <i class="fas fa-dizzy"></i>
+                Muerto
+            </button>
+            <div class="col-4"></div>   
+        </div>
+    </div>
+    <hr>
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary w-25">
+            <i class="fas fa-save"></i>
+            Guardar
+        </button>
+    </div> 
+    </form>
     </div>
 </div>
