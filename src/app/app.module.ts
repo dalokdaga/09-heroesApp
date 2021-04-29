@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { HeroeComponent } from './pages/heroe/heroe.component';
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    FormsModule  
+    FormsModule,
+    HttpClientModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
